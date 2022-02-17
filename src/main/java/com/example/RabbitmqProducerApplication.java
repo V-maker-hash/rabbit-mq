@@ -60,7 +60,7 @@ public class RabbitmqProducerApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 //        producer.sendHello("VASILIY");
 //        fixedRateRabbitProducer.sendRate();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 1; i++) {
 //            var emp = new Employee("" + i, "Employee" + i, LocalDate.now());
 //            employeeRabbitProducer.sendEmployeeInfo(emp);
 //            accountingRabbitProducer.sendAccountingInfo(emp);
