@@ -1,1 +1,3 @@
-rootProject.name = 'rabbitmq-consumer'
+rootProject.name = 'Gradle_RabbitMQ_Multiproject'
+include 'rabbitmq-producer'
+include 'rabbitmq-consumer'
