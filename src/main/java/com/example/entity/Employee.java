@@ -3,9 +3,10 @@ package com.example.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Employee {
+public class Employee implements Serializable {
 
     @JsonProperty("employee_id")
     private String employeeId;
