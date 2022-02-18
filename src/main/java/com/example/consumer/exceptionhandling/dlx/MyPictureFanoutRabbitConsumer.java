@@ -23,7 +23,7 @@ public class MyPictureFanoutRabbitConsumer {
 
     @RabbitListener(queues = {"q.mypicture.image"})
     public void getMessageFromPictureProducer(String msg, Channel channel,
-                                              @Header(AmqpHeaders.DELIVERY_MODE) long tag) throws IOException {
+                                              @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
         var picture = objectMapper.readValue(msg, Picture.class);
         if (picture.getSize() > 9000) {
 //            throw new AmqpRejectAndDontRequeueException("Picture size more than 9000");
