@@ -23,6 +23,6 @@ public class FixedRateRabbitProducer {
     public void sendRate() {
         var increment = atomicInteger.getAndIncrement();
         LOGGER.info("Increment = {}", increment);
-        rabbitTemplate.convertAndSend("course.fixedRate", "Rate is " + increment);
+        rabbitTemplate.convertAndSend("q.cloud.fixedRate", "Rate is " + increment);
     }
 }

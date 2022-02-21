@@ -1,8 +1,9 @@
 spring:
   rabbitmq:
-    addresses: localhost:5672
-    username: guest
-    password: guest
+    addresses: gull.rmq.cloudamqp.com
+    username: pztsrzej
+    password: GWcfsevMtJkb-8JWgQp4nLjkciryzSp9
+    virtual-host: pztsrzej
     listener:
       simple:
         acknowledge-mode: manual

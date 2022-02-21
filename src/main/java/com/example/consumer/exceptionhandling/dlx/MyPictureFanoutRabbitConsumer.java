@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
-@Service
+//@Service
 public class MyPictureFanoutRabbitConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MyPictureFanoutRabbitConsumer.class);

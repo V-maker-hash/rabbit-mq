@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;
 
-@Service
+//@Service
 public class RabbitMqScheduler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RabbitMqScheduler.class);
