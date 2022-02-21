@@ -5,7 +5,7 @@ import java.util.Random;
 
 public enum Type {
 
-    SVN("svn"), PNG("png"), IMG("img");
+    SVN("svg"), PNG("png"), IMG("img");
 
     private static final List<Type> TYPES = List.of(values());
     private static final int SIZE = TYPES.size();
