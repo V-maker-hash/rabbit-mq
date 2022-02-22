@@ -1,7 +1,7 @@
 package com.example;
 
-import com.example.entity.Employee;
-import com.example.producer.springmechanism.EmployeeSpringRetryFanoutProducer;
+import com.example.entity.DummyMessage;
+import com.example.producer.DummyProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class RabbitmqProducerApplication implements CommandLineRunner {
 
     @Autowired
-    private EmployeeSpringRetryFanoutProducer employeeSpringRetryFanoutProducer;
+    private DummyProducer dummyProducer;
 
     public static void main(String[] args) {
         SpringApplication.run(RabbitmqProducerApplication.class, args);
@@ -23,11 +23,8 @@ public class RabbitmqProducerApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        for (int i = 0; i < 1; i++) {
-            var picture = new Employee("" + i,
-                    "",
-                    LocalDate.now());
-            employeeSpringRetryFanoutProducer.sendEmployeeInfo(picture);
-        }
+        var dummyMessage = new DummyMessage("Now is " + LocalDate.now(), 1);
+        dummyProducer.sendDummyMsg(dummyMessage);
+
     }
 }
