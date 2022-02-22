@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.time.LocalDate;
+import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
 @EnableScheduling
@@ -23,8 +24,12 @@ public class RabbitmqProducerApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        var dummyMessage = new DummyMessage("Now is " + LocalDate.now(), 1);
-        dummyProducer.sendDummyMsg(dummyMessage);
+        for (var i = 0; i < 10_000; i++) {
+            var dummyMessage = new DummyMessage("Now is " + LocalDate.now(), i);
+            dummyProducer.sendDummyMsg(dummyMessage);
+            TimeUnit.SECONDS.sleep(1);
+        }
+
 
     }
 }
